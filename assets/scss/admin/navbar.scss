@@ -1,0 +1,25 @@
+.navbar-admin {
+    height: 10vh;
+    font-size: 1.7rem;
+
+    .navbar-brand {
+        font-size: 2.5rem;
+        font-weight: bold;
+    }
+
+    .navbar-nav {
+        margin-left: 2vw;
+        width: 75%;
+
+        li {
+            text-align: center;
+            margin-left: 2vw;
+        }
+    }
+
+    .log {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 25%;
+    }
+}

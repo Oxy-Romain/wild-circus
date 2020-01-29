@@ -1,1 +1,112 @@
 {% extends 'admin/layout_admin.html.twig' %}
+
+{% block title %}Admin Wild Circus{% endblock %}
+
+{% block body %}
+    <div class="container admin-container">
+        <h1 class="admin_perform">Perform index</h1>
+
+        <table class="table-admin">
+            <thead class="header-table-admin">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="body-table-admin">
+            {% for perform in performs %}
+                <tr>
+                    <td>{{ perform.title }}</td>
+                    <td>{{ perform.description }}</td>
+                    <td>{{ perform.image }}</td>
+                    <td>
+                        <a href="{{ path('perform_edit', {'id': perform.id}) }}">
+                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('perform_new') }}">Create new</a>
+    </div>
+    <div class="container admin-container">
+
+        <h1 id="admin_crew">Member index</h1>
+
+        <table class="table-admin">
+            <thead class="header-table-admin">
+            <tr>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Job</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="body-table-admin">
+            {% for member in members %}
+                <tr>
+                    <td>{{ member.name }}</td>
+                    <td>{{ member.image }}</td>
+                    <td>{{ member.Job }}</td>
+                    <td>
+                        <a href="{{ path('member_edit', {'id': member.id}) }}">
+                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="5">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('member_new') }}">Create new</a>
+    </div>
+    <div class="container admin-container">
+
+        <h1 id="admin_price">Price index</h1>
+
+        <table class="table-admin">
+            <thead class="header-table-admin">
+            <tr>
+                <th>Target</th>
+                <th>Unit</th>
+                <th>Week</th>
+                <th>Weekend</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody class="body-table-admin">
+            {% for price in prices %}
+                <tr>
+                    <td>{{ price.target }}</td>
+                    <td>{{ price.unit ? 'Yes' : 'No' }}</td>
+                    <td>{{ price.week }}</td>
+                    <td>{{ price.weekend }}</td>
+                    <td>
+                        <a href="{{ path('price_edit', {'id': price.id}) }}">
+                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
+                        </a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('price_new') }}">Create new</a>
+    </div>
+{% endblock %}

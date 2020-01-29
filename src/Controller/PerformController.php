@@ -16,16 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class PerformController extends AbstractController
 {
     /**
-     * @Route("/", name="perform_index", methods={"GET"})
-     */
-    public function index(PerformRepository $performRepository): Response
-    {
-        return $this->render('admin/perform/index.html.twig', [
-            'performs' => $performRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/new", name="perform_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -39,7 +29,7 @@ class PerformController extends AbstractController
             $entityManager->persist($perform);
             $entityManager->flush();
 
-            return $this->redirectToRoute('perform_index');
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('admin/perform/new.html.twig', [
@@ -69,7 +59,7 @@ class PerformController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('perform_index');
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('admin/perform/edit.html.twig', [
@@ -89,6 +79,6 @@ class PerformController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('perform_index');
+        return $this->redirectToRoute('admin_index');
     }
 }

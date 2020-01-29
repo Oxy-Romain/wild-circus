@@ -16,16 +16,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class PriceController extends AbstractController
 {
     /**
-     * @Route("/", name="price_index", methods={"GET"})
-     */
-    public function index(PriceRepository $priceRepository): Response
-    {
-        return $this->render('admin/price/index.html.twig', [
-            'prices' => $priceRepository->findAll(),
-        ]);
-    }
-
-    /**
      * @Route("/new", name="price_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
@@ -39,7 +29,7 @@ class PriceController extends AbstractController
             $entityManager->persist($price);
             $entityManager->flush();
 
-            return $this->redirectToRoute('price_index');
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('admin/price/new.html.twig', [
@@ -69,7 +59,7 @@ class PriceController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('price_index');
+            return $this->redirectToRoute('admin_index');
         }
 
         return $this->render('admin/price/edit.html.twig', [
@@ -89,6 +79,6 @@ class PriceController extends AbstractController
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('price_index');
+        return $this->redirectToRoute('admin_index');
     }
 }
