@@ -1,0 +1,39 @@
+{% extends 'admin/layout_admin.html.twig' %}
+
+{% block title %}Perform index{% endblock %}
+
+{% block body %}
+    <h1>Perform index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Image</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for perform in performs %}
+            <tr>
+                <td>{{ perform.id }}</td>
+                <td>{{ perform.title }}</td>
+                <td>{{ perform.description }}</td>
+                <td>{{ perform.image }}</td>
+                <td>
+                    <a href="{{ path('perform_show', {'id': perform.id}) }}">show</a>
+                    <a href="{{ path('perform_edit', {'id': perform.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('perform_new') }}">Create new</a>
+{% endblock %}

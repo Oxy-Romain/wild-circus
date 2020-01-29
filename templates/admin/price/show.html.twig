@@ -1,0 +1,38 @@
+{% extends 'admin/layout_admin.html.twig' %}
+
+{% block title %}Price{% endblock %}
+
+{% block body %}
+    <h1>Price</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ price.id }}</td>
+            </tr>
+            <tr>
+                <th>Target</th>
+                <td>{{ price.target }}</td>
+            </tr>
+            <tr>
+                <th>Unit</th>
+                <td>{{ price.unit ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Week</th>
+                <td>{{ price.week }}</td>
+            </tr>
+            <tr>
+                <th>Weekend</th>
+                <td>{{ price.weekend }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('price_index') }}">back to list</a>
+
+    <a href="{{ path('price_edit', {'id': price.id}) }}">edit</a>
+
+    {{ include('admin/price/_delete_form.html.twig') }}
+{% endblock %}
