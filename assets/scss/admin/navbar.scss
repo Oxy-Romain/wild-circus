@@ -1,25 +1,81 @@
-.navbar-admin {
-    height: 10vh;
-    font-size: 1.7rem;
+.adjust-format{
+    position:relative;
+    height:100vh;
 
-    .navbar-brand {
-        font-size: 2.5rem;
-        font-weight: bold;
+    .helper{
+        background:rgba(0,0,0,0.2);
+        position:absolute;
+        top:50%;
+        left:50%;
+        transform:translate3d(-50%,-50%,0);
+        padding:1.2em 2em;
+        text-align:center;
+        border-radius:20px;
+        font-size:2em;
+        font-weight:bold;
+
+        span{
+            color:rgba(0,0,0,0.2);
+            font-size:0.4em;
+            display:block;
+        }
     }
+}
 
-    .navbar-nav {
-        margin-left: 2vw;
-        width: 75%;
+.menu {
+    background: lightgray;
+    height: 100vh;
+    width: 240px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    outline: none;
 
-        li {
-            text-align: center;
-            margin-left: 2vw;
+    .avatar {
+        background: rgba(0, 0, 0, 0.1);
+        padding: 2em 0.5em;
+        text-align: center;
+
+        img {
+            width: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid whitesmoke;
+            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.2);
+        }
+
+        h2 {
+            font-weight: normal;
+            margin-bottom: 0;
         }
     }
 
-    .log {
-        display: flex;
-        flex-direction: row-reverse;
-        width: 25%;
+    ul {
+        list-style: none;
+        padding: 0.5em 0;
+        margin: 0;
+
+        li {
+            padding: 0.5em 1em 0.5em 2em;
+            font-size: 1.4rem;
+            background-repeat: no-repeat;
+            background-position: left 15px center;
+            background-size: auto 20px;
+            transition: all 0.15s linear;
+            cursor: pointer;
+
+            a {
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                color:black;
+            }
+
+            a:hover {
+                text-decoration: none;
+                font-weight: bold;
+            }
+        }
     }
 }

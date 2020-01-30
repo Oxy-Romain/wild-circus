@@ -1,24 +1,24 @@
-<nav class="navbar navbar-admin navbar-expand-lg navbar-light bg-light fixed-top">
-    <a class="navbar-brand" href="#">ADMINISTRATOR</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="nav-link" href="#admin_perform">PERFORM</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#admin_crew">THE CREW</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#admin_price">PRICE</a>
-            </li>
-        </ul>
-        <ul class="navbar-nav log">
-            <li class="nav-item">
-                <a class="nav-link" href="#">LOG OUT</a>
-            </li>
-        </ul>
-    </div>
+<nav class="menu" tabindex="0">
+    <div class="smartphone-menu-trigger"></div>
+    <header class="avatar">
+        <img src="{{ asset('build/placeholderAdmin.png') }}" alt="">
+        <h2>Admin</h2>
+    </header>
+    <ul>
+        <li tabindex="0" class="icon-dashboard">
+            <a href="#admin_perform">
+                <span>PERFORM</span>
+            </a>
+        </li>
+        <li tabindex="0" class="icon-customers">
+            <a href="#admin_crew">
+                <span>THE CREW</span>
+            </a>
+        </li>
+        <li tabindex="0" class="icon-users">
+            <a href="#admin_price">
+                <span>PRICE</span>
+            </a>
+        </li>
+    </ul>
 </nav>

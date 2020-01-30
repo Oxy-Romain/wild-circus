@@ -14,11 +14,11 @@ class PerformFixtures extends Fixture
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 1; $i <= 15; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $perform = new Perform();
             $perform->setTitle($faker->title());
             $perform->setDescription($faker->text());
-            $perform->setImage($faker->image());
+            $perform->setImage($faker->imageUrl());
 
             $manager->persist($perform);
             $this->addReference('perform_' . $i, $perform);
@@ -26,10 +26,5 @@ class PerformFixtures extends Fixture
 
         $manager->flush();
 
-    }
-
-    public function getDependencies()
-    {
-        return [PerformFixtures::class];
     }
 }

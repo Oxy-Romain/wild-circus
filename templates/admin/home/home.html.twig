@@ -3,110 +3,122 @@
 {% block title %}Admin Wild Circus{% endblock %}
 
 {% block body %}
-    <div class="container admin-container">
-        <h1 class="admin_perform">Perform index</h1>
+    <div class="adjust-format">
+        <div class="container admin-container" id="admin_perform">
+            <div class="header-table">
+                <h1>Perform index</h1>
 
-        <table class="table-admin">
-            <thead class="header-table-admin">
-            <tr>
-                <th>Title</th>
-                <th>Description</th>
-                <th>Image</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody class="body-table-admin">
-            {% for perform in performs %}
+                <a href="{{ path('perform_new') }}">
+                    <button class="btn btn-outline-dark"><i class="fas fa-plus"></i> New</button>
+                </a>
+            </div>
+
+            <table class="table-admin">
+                <thead class="header-table-admin">
                 <tr>
-                    <td>{{ perform.title }}</td>
-                    <td>{{ perform.description }}</td>
-                    <td>{{ perform.image }}</td>
-                    <td>
-                        <a href="{{ path('perform_edit', {'id': perform.id}) }}">
-                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
-                        </a>
-                    </td>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th></th>
                 </tr>
-            {% else %}
+                </thead>
+                <tbody class="body-table-admin">
+                {% for perform in performs %}
+                    <tr>
+                        <td>{{ perform.title }}</td>
+                        <td>{{ perform.description }}</td>
+                        <td>{{ perform.image }}</td>
+                        <td>
+                            <a href="{{ path('perform_edit', {'id': perform.id}) }}">
+                                <button class="btn btn-outline-dark"><i class="fas fa-pen"></i> Modifier</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+        <div class="container admin-container" id="admin_crew">
+            <div class="header-table">
+                <h1>Member index</h1>
+
+                <a href="{{ path('member_new') }}">
+                    <button class="btn btn-outline-dark"><i class="fas fa-plus"></i> New</button>
+                </a>
+            </div>
+            <table class="table-admin">
+                <thead class="header-table-admin">
                 <tr>
-                    <td colspan="5">no records found</td>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Job</th>
+                    <th></th>
                 </tr>
-            {% endfor %}
-            </tbody>
-        </table>
+                </thead>
+                <tbody class="body-table-admin">
+                {% for member in members %}
+                    <tr>
+                        <td>{{ member.name }}</td>
+                        <td>{{ member.image }}</td>
+                        <td>{{ member.Job }}</td>
+                        <td>
+                            <a href="{{ path('member_edit', {'id': member.id}) }}">
+                                <button class="btn btn-outline-dark"><i class="fas fa-pen"></i> Modifier</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container admin-container" id="admin_price">
+            <div class="header-table">
 
-        <a href="{{ path('perform_new') }}">Create new</a>
-    </div>
-    <div class="container admin-container">
+                <h1>Price index</h1>
 
-        <h1 id="admin_crew">Member index</h1>
-
-        <table class="table-admin">
-            <thead class="header-table-admin">
-            <tr>
-                <th>Name</th>
-                <th>Image</th>
-                <th>Job</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody class="body-table-admin">
-            {% for member in members %}
+                <a href="{{ path('price_new') }}">
+                    <button class="btn btn-outline-dark"><i class="fas fa-plus"></i> New</button>
+                </a>
+            </div>
+            <table class="table-admin">
+                <thead class="header-table-admin">
                 <tr>
-                    <td>{{ member.name }}</td>
-                    <td>{{ member.image }}</td>
-                    <td>{{ member.Job }}</td>
-                    <td>
-                        <a href="{{ path('member_edit', {'id': member.id}) }}">
-                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
-                        </a>
-                    </td>
+                    <th>Target</th>
+                    <th>Unit</th>
+                    <th>Week</th>
+                    <th>Weekend</th>
+                    <th></th>
                 </tr>
-            {% else %}
-                <tr>
-                    <td colspan="5">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-        <a href="{{ path('member_new') }}">Create new</a>
-    </div>
-    <div class="container admin-container">
-
-        <h1 id="admin_price">Price index</h1>
-
-        <table class="table-admin">
-            <thead class="header-table-admin">
-            <tr>
-                <th>Target</th>
-                <th>Unit</th>
-                <th>Week</th>
-                <th>Weekend</th>
-                <th></th>
-            </tr>
-            </thead>
-            <tbody class="body-table-admin">
-            {% for price in prices %}
-                <tr>
-                    <td>{{ price.target }}</td>
-                    <td>{{ price.unit ? 'Yes' : 'No' }}</td>
-                    <td>{{ price.week }}</td>
-                    <td>{{ price.weekend }}</td>
-                    <td>
-                        <a href="{{ path('price_edit', {'id': price.id}) }}">
-                            <button class="btn btn-secondary"><i class="fas fa-pen"></i> Modifier</button>
-                        </a>
-                    </td>
-                </tr>
-            {% else %}
-                <tr>
-                    <td colspan="6">no records found</td>
-                </tr>
-            {% endfor %}
-            </tbody>
-        </table>
-
-        <a href="{{ path('price_new') }}">Create new</a>
+                </thead>
+                <tbody class="body-table-admin">
+                {% for price in prices %}
+                    <tr>
+                        <td>{{ price.target }}</td>
+                        <td>{{ price.unit ? 'Unit' : 'Group' }}</td>
+                        <td>{{ price.week }}</td>
+                        <td>{{ price.weekend }}</td>
+                        <td>
+                            <a href="{{ path('price_edit', {'id': price.id}) }}">
+                                <button class="btn btn-outline-dark"><i class="fas fa-pen"></i> Modifier</button>
+                            </a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="6">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 {% endblock %}
