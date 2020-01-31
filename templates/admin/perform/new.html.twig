@@ -3,9 +3,18 @@
 {% block title %}New Perform{% endblock %}
 
 {% block body %}
-    <h1>Create new Perform</h1>
+    <div class="adjust-format">
+        <div class="form-admin">
+            <div class="card-form">
 
-    {{ include('admin/perform/_form.html.twig') }}
+                <h1>Create new Perform</h1>
 
-    <a href="{{ path('perform_index') }}">back to list</a>
+                {{ include('admin/perform/_form.html.twig') }}
+
+                <a href="{{ path('admin_index') }}">
+                    <button class="btn btn-outline-dark"><i class="fas fa-arrow-left"></i> Back to list</button>
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

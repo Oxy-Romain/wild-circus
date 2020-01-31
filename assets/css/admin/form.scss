@@ -1,0 +1,67 @@
+.form-admin {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: -240px;
+
+    .card-form {
+        background: linear-gradient(140deg, rgb(132, 95, 24) 0%, rgb(218, 165, 32) 50%, rgb(132, 95, 24) 100%);
+        width: 30rem;
+        padding: 2rem;
+        border: solid rgb(0, 0, 48) 2px;
+        border-radius: 1rem;
+        perspective: 1000px;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .btn-save {
+            display: flex;
+            justify-content: center;
+        }
+
+        h1 {
+            color: rgb(0, 0, 48);
+            font-weight: bold;
+        }
+
+        form {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+
+            div {
+                margin-bottom: 2vh;
+            }
+        }
+
+        label {
+            width: 20rem;
+            font-weight: bold;
+            color: rgb(0, 0, 48);
+        }
+
+        input {
+            width: 20rem;
+            border: solid rgb(0, 0, 48) 1px;
+            border-radius: 0.3rem;
+            margin-bottom: 2vh;
+            text-align: center;
+        }
+
+        textarea {
+            width: 20rem;
+            border: solid rgb(0, 0, 48) 1px;
+            border-radius: 0.3rem;
+        }
+
+        select {
+            width: 20rem;
+            border: solid rgb(0, 0, 48) 1px;
+            border-radius: 0.3rem;
+            text-align: center;
+        }
+    }
+}

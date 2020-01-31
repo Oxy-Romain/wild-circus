@@ -14,7 +14,7 @@ class PriceFixtures extends Fixture
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 1; $i <= 5; $i++) {
+        for ($i = 1; $i <= 4; $i++) {
             $perform = new Price();
             $perform->setTarget($faker->title());
             $perform->setUnit($faker->boolean());

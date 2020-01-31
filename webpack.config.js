@@ -57,7 +57,7 @@ Encore
         config.corejs = 3;
     })
 
-    // enables Sass/scss support
+    // enables Sass/css support
     .enableSassLoader()
 
     // uncomment if you use TypeScript
@@ -68,7 +68,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()

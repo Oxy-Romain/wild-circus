@@ -14,10 +14,10 @@ class PerformFixtures extends Fixture
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 1; $i <= 10; $i++) {
+        for ($i = 1; $i <= 6; $i++) {
             $perform = new Perform();
-            $perform->setTitle($faker->title());
-            $perform->setDescription($faker->text());
+            $perform->setTitle($faker->sentence(3));
+            $perform->setDescription($faker->text(150));
             $perform->setImage($faker->imageUrl());
 
             $manager->persist($perform);

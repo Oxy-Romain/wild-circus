@@ -3,9 +3,18 @@
 {% block title %}New Price{% endblock %}
 
 {% block body %}
-    <h1>Create new Price</h1>
+    <div class="adjust-format">
+        <div class="form-admin">
+            <div class="card-form">
 
-    {{ include('admin/price/_form.html.twig') }}
+                <h1>Create new Price</h1>
 
-    <a href="{{ path('price_index') }}">back to list</a>
+                {{ include('admin/price/_form.html.twig') }}
+
+                <a href="{{ path('admin_index') }}">
+                    <button class="btn btn-outline-dark"><i class="fas fa-arrow-left"></i> Back to list</button>
+                </a>
+            </div>
+        </div>
+    </div>
 {% endblock %}

@@ -1,0 +1,50 @@
+.navbar {
+    background: linear-gradient(140deg, rgb(0, 0, 106) 0%, rgb(27, 28, 255) 50%, rgb(0, 0, 106) 100%);
+}
+
+.navbar-toggler {
+    color:rgb(218,165,32);
+}
+
+.navbar-brand {
+    margin-right: 3vw;
+    width: 12vw;
+    font-size: 30px;
+    font-weight: bold;
+    color:rgb(218,165,32);
+}
+
+.navbar-brand:hover {
+    color: rgb(105, 78, 18);
+    font-weight: bold;
+}
+
+.nav-link {
+    width: 10rem;
+    font-size: 20px;
+    color:rgb(218,165,32);
+}
+
+.nav-link:hover {
+    color: rgb(105, 78, 18);
+    font-weight: bold;
+}
+
+.nav-user:hover {
+    color:rgb(218,165,32);
+    font-weight: normal;
+}
+
+@media screen and (max-width: 480px) {
+
+    .navbar {
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+
+        .log {
+            display: none;
+        }
+    }
+
+}

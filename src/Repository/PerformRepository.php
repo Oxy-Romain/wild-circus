@@ -19,22 +19,20 @@ class PerformRepository extends ServiceEntityRepository
         parent::__construct($registry, Perform::class);
     }
 
-    // /**
-    //  * @return Perform[] Returns an array of Perform objects
-    //  */
-    /*
-    public function findByExampleField($value)
+
+    const MAX_PERFORM = 4;
+    /**
+     * @return Perform[] Returns an array of Perform objects
+     */
+        public function findByExampleField()
     {
-        return $this->createQueryBuilder('p')
-            ->andWhere('p.exampleField = :val')
-            ->setParameter('val', $value)
+        $qd = $this->createQueryBuilder('p')
             ->orderBy('p.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
+            ->setMaxResults(self::MAX_PERFORM);
+        $query = $qd->getQuery();
+        return $query->execute();
+
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?Perform

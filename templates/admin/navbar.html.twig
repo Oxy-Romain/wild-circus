@@ -5,19 +5,29 @@
         <h2>Admin</h2>
     </header>
     <ul>
-        <li tabindex="0" class="icon-dashboard">
-            <a href="#admin_perform">
+        <li tabindex="0">
+            <a href="{{ path('admin_index') }}#admin_perform">
                 <span>PERFORM</span>
             </a>
         </li>
-        <li tabindex="0" class="icon-customers">
-            <a href="#admin_crew">
+        <li tabindex="0">
+            <a href="{{ path('admin_index') }}#admin_crew">
                 <span>THE CREW</span>
             </a>
         </li>
-        <li tabindex="0" class="icon-users">
-            <a href="#admin_price">
+        <li tabindex="0">
+            <a href="{{ path('admin_index') }}#admin_price">
                 <span>PRICE</span>
+            </a>
+        </li>
+        <li tabindex="0">
+            <a href="{{ path('home_index') }}">
+                <span>VISITOR VIEW</span>
+            </a>
+        </li>
+        <li tabindex="0">
+            <a href="{{ path('app_logout') }}">
+                <span>LOG OUT</span>
             </a>
         </li>
     </ul>

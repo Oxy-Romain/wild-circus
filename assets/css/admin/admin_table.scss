@@ -1,0 +1,59 @@
+.btn {
+    color: rgb(0, 0, 48);
+    border: rgb(0, 0, 48) solid 1px;
+    width: 8rem;
+}
+
+.btn-back-list {
+    margin-bottom: 2vh;
+}
+
+.btn:hover {
+    color: rgb(218, 165, 32);
+    background-color: rgb(0, 0, 48);
+}
+
+.header-table {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: rgb(0, 0, 48);
+}
+
+.admin-container {
+    background: linear-gradient(140deg, rgb(132, 95, 24) 0%, rgb(218, 165, 32) 50%, rgb(132, 95, 24) 100%);
+    border-radius: 1rem;
+    width: 85%;
+}
+
+.table-admin {
+    width: 100%;
+    margin-bottom: 4vh;
+    margin-top: 4vh;
+    border: solid rgb(0, 0, 48) 1px;
+
+    .header-table-admin {
+        font-size: 1.3rem;
+        width: 100%;
+        border-bottom: solid rgb(0, 0, 48) 1px;
+
+        th {
+            padding: 1.3rem;
+            text-align: center;
+            color: rgb(0, 0, 48);
+        }
+    }
+
+    .body-table-admin {
+        font-size: 1rem;
+        width: 100%;
+
+        td {
+            padding: 1rem;
+            border-bottom: black 1px solid;
+            text-align: center;
+            color: rgb(0, 0, 48);
+        }
+    }
+}
+

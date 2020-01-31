@@ -9,8 +9,16 @@
 
 body {
     font-family: "Merienda", sans-serif;
+    position: relative;
+    background-color: darkblue;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("../images/cirque.jpg");
+
 }
 
 main {
-    margin-top: 10vh;
+    margin-top: 15vh;
 }

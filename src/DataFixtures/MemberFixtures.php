@@ -15,12 +15,12 @@ class MemberFixtures extends Fixture implements DependentFixtureInterface
     {
         $faker = Faker\Factory::create();
 
-        for ($i = 1; $i <= 30; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $member = new Member();
             $member->setName($faker->name());
             $member->setJob($faker->word());
             $member->setImage($faker->imageUrl());
-            $member->setPerform($this->getReference('perform_' . rand(1,10)));
+            $member->setPerform($this->getReference('perform_' . rand(1,6)));
 
             $manager->persist($member);
             $this->addReference('member_' . $i, $member);
